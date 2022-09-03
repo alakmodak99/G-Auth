@@ -3,6 +3,9 @@ const bcryptjs = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const route = express.Router()
 const userModel = require("../Model/User.model")
+route.get("/", async (req,res)=>{
+   return res.status(200).send(await userModel.find())
+})
 route.post("/register", async (req,res)=>{
     const check = await userModel.findOne({email: req.body.email})
     if(check) return res.status(400).send("Someone is already registerd with this email")
