@@ -1,4 +1,4 @@
-require("dotenv").config()
+
 const mongoose = require("mongoose")
 //console.log(process.env.DB_URL)
 const connect =  async ()=>{
